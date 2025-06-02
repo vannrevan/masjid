@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mesjid Al Ikhlas</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Amiri&family=Poppins:wght@300;600&display=swap");
+
+      :root {
+        --primary-green: #2a7a43;
+        --secondary-gold: #d4af37;
+        --dark-green: #1b4d29;
+        --light-green: #a8d5ba;
+        --background: #f4f8f6;
+        --text-dark: #222222;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+        background-color: var(--background);
+        color: var(--text-dark);
+        line-height: 1.6;
+      }
+
+      header {
+        position: relative;
+        background-color: var(--primary-green);
+        color: white;
+        text-align: center;
+        overflow: hidden;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      }
+      header img.banner {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        filter: brightness(0.5);
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 0;
+      }
+      header .header-content {
+        position: relative;
+        padding: 2rem 1rem 2.5rem 1rem;
+        z-index: 1;
+      }
+      header h1 {
+        margin: 0;
+        font-family: "Amiri", serif;
+        font-weight: 600;
+        font-size: 2.8rem;
+        letter-spacing: 3px;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+      }
+      header p {
+        margin-top: 0.3rem;
+        font-style: italic;
+        font-weight: 300;
+        font-size: 1.3rem;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+      }
+
+      nav {
+        margin-top: 1rem;
+      }
+      nav a {
+        color: var(--light-green);
+        text-decoration: none;
+        margin: 0 1rem;
+        font-weight: 600;
+        transition: color 0.3s ease;
+      }
+      nav a:hover {
+        color: var(--secondary-gold);
+      }
+
+      main {
+        max-width: 900px;
+        margin: 3rem auto 4rem auto;
+        padding: 0 1rem;
+      }
+
+      section {
+        margin-bottom: 3rem;
+      }
+
+      section h2 {
+        font-family: "Amiri", serif;
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        color: var(--primary-green);
+        border-bottom: 3px solid var(--secondary-gold);
+        padding-bottom: 0.4rem;
+        display: inline-block;
+      }
+
+      .about {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 1.5rem;
+      }
+
+      .about img {
+        width: 320px;
+        max-width: 100%;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+      }
+
+      .about p {
+        font-size: 1.15rem;
+        flex: 1;
+        min-width: 250px;
+      }
+
+      .prayer-times {
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+        padding: 1.5rem 2rem;
+        max-width: 400px;
+      }
+
+      .prayer-times ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .prayer-times li {
+        display: flex;
+        justify-content: space-between;
+        padding: 0.6rem 0;
+        border-bottom: 1px solid #eee;
+        font-weight: 600;
+        font-size: 1.1rem;
+      }
+      .prayer-times li:last-child {
+        border-bottom: none;
+      }
+
+      .events ul {
+        list-style: none;
+        padding-left: 0;
+        max-width: 700px;
+      }
+
+      .events li {
+        background: white;
+        margin-bottom: 1rem;
+        padding: 1rem 1.5rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+      }
+      .events li img {
+        width: 100px;
+        height: 70px;
+        object-fit: cover;
+        border-radius: 8px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      }
+      .events li h3 {
+        margin: 0 0 0.3rem 0;
+        color: var(--dark-green);
+        font-family: "Amiri", serif;
+      }
+      .events li p {
+        margin: 0;
+        font-size: 1rem;
+        color: #444;
+      }
+
+      .contact-info {
+        max-width: 700px;
+        font-size: 1.1rem;
+        line-height: 1.5;
+      }
+      .contact-info p {
+        margin: 0.5rem 0;
+      }
+
+      footer {
+        background-color: var(--primary-green);
+        color: white;
+        text-align: center;
+        padding: 1rem 0;
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+      }
+
+      @media (max-width: 700px) {
+        header h1 {
+          font-size: 1.8rem;
+        }
+        main {
+          margin: 1rem;
+        }
+        .prayer-times {
+          max-width: 100%;
+        }
+        .about {
+          flex-direction: column;
+        }
+        .events li {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .events li img {
+          width: 100%;
+          height: auto;
+          border-radius: 12px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <img
+        class="banner"
+        src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1470&q=80"
+        alt="Mesjid Al Ikhlas Banner"
+      />
+      <div class="header-content">
+        <h1>Mesjid Al Ikhlas</h1>
+        <p>Tempat Ibadah & Pusat Komunitas</p>
+        <nav>
+          <a href="#about">Tentang</a>
+          <a href="#prayer-times">Waktu Sholat</a>
+          <a href="#events">Acara</a>
+          <a href="#contact">Kontak</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section id="about" class="about">
+        <img src="images/Foto masjid.jpg" alt="Foto Mesjid" />
+        <p>
+          Mesjid Al Ikhlas adalah pusat kegiatan ibadah dan sosial yang
+          berlokasi di tengah komunitas kami. Kami berkomitmen menjadi tempat
+          yang nyaman dan damai untuk beribadah serta memperkuat ikatan
+          persaudaraan. Kami menyelenggarakan berbagai kegiatan keagamaan dan
+          sosial untuk semua umur.
+        </p>
+      </section>
+
+      <section id="prayer-times" class="prayer-times">
+        <h2>Waktu Sholat Harian</h2>
+        <ul>
+          <li><span>Subuh</span> <span>04:33</span></li>
+          <li><span>Dzuhur</span> <span>11:49</span></li>
+          <li><span>Ashar</span> <span>15:11</span></li>
+          <li><span>Maghrib</span> <span>17:42</span></li>
+          <li><span>Isya</span> <span>18:57</span></li>
+        </ul>
+      </section>
+
+      <section id="events" class="events">
+        <h2>Acara Terdekat</h2>
+        <ul>
+          <li>
+            <img src="images/Jumatan.jpg" alt="Pengajian" />
+            <div>
+              <h3>Pengajian Rutin Jumat</h3>
+              <p>
+                Setiap Jumat pukul 19:30 - Kajian Islam dengan Ustadz Ahmad.
+              </p>
+            </div>
+          </li>
+          <li>
+            <img src="images/Buka bersama.jpg" alt="Buka Puasa Bersama" />
+            <div>
+              <h3>Buka Puasa Bersama</h3>
+              <p>
+                Acara buka puasa bersama keluarga dan komunitas, 15 April 2025
+                pukul 17:30.
+              </p>
+            </div>
+          </li>
+          <li>
+            <img src="images/Bakti sosial.jpg" alt="Program Sosial" />
+            <div>
+              <h3>Program Sosial</h3>
+              <p>
+                Penggalangan donasi untuk korban bencana alam, mulai 1 hingga 30
+                Mei 2025.
+              </p>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section id="contact" class="contact-info">
+        <h2>Kontak Kami</h2>
+        <p>
+          <strong>Alamat:</strong> Jl Perumahan Terangsari blok i2, RT.001
+          RW.007 Cibalongsari.Kec Kelari Karawang
+        </p>
+        <p><strong>Telepon:</strong> 0895-6052-98359</p>
+        <p><strong>Email:</strong> info@mesjid-alikhlas.id</p>
+      </section>
+    </main>
+
+    <footer>&copy; 2025 Mesjid Al Ikhlas. Ciptaan Revan Juna.</footer>
+  </body>
+</html>
